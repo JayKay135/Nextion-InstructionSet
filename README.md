@@ -10,9 +10,15 @@ npm i nextion-instructionset
 ## Dependencies
 [SerialPort](https://www.npmjs.com/package/serialport)
 
+## Note
+- If you use an raspberry pi make sure to correctly enable serial port connections.
+  For more information take a look in the [docs](https://www.raspberrypi.org/documentation/configuration/uart.md)
+- Always ensure that the nextion display is connected correctly to avoid irreparable damage to the display.
+
 # Getting started
+Set the port and baudrate for your application accordingly
 ```javascript
-const Nextion = require(nextion-instructionset);
+const Nextion = require('nextion-instructionset');
 const port = '/dev/ttyS0';
 const baudrate = 9600;
 const nextion = new Nextion.init(port, baudrate);

@@ -1,4 +1,4 @@
-const Nextion = require('./nextion');
+const Nextion = require('nextion-instructionset');
 const nextion = new Nextion.init('/dev/ttyS0', 9600);
 
 nextion.on('connected', function() {
