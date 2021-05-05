@@ -1,0 +1,22 @@
+{
+  "name": "nextion-instructionset",
+  "version": "1.0.0",
+  "description": "Sends and receives data via a UART connection with nextion displays",
+  "main": "nextion.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayKay135/Nextion-InstructionSet.git"
+  },
+  "keywords": [
+    "nextion"
+  ],
+  "author": "jaykay135 <jankolberg@t-online.de> (https://github.com/JayKay135/Nextion-InstructionSet)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JayKay135/Nextion-InstructionSet/issues"
+  },
+  "homepage": "https://github.com/JayKay135/Nextion-InstructionSet#readme"
+}
