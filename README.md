@@ -131,7 +131,7 @@ Nextion.color.hex('#1da1de');
 ```
 
 # Events
-Subscribe to events to know when a something on the display was changed
+Subscribe to events to know when something on the display was changed
 ```javascript
 // the connection to the nextion display was established
 nextion.on('connected', function() {

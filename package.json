@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/JayKay135/Nextion-InstructionSet/issues"
   },
-  "homepage": "https://github.com/JayKay135/Nextion-InstructionSet#readme"
+  "homepage": "https://github.com/JayKay135/Nextion-InstructionSet#readme",
+  "dependencies": {
+    "serialport": "^9.0.7"
+  }
 }
