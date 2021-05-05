@@ -1,6 +1,6 @@
 {
   "name": "nextion-instructionset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sends and receives data via a UART connection with nextion displays",
   "main": "nextion.js",
   "scripts": {
