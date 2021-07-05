@@ -144,7 +144,7 @@ class Write {
     }
 
     /**
-     * Draws the outline of a circle
+     * Draws the outline of a circle to the {x} and {y} koordinates
      * @param {number} x x pos
      * @param {number} y y pos
      * @param {number} r radius
@@ -155,7 +155,7 @@ class Write {
     }
 
     /**
-     * Draws a filled circle to the {x} and {y} koordinate
+     * Draws a filled circle to the {x} and {y} koordinates
      * @param {number} x x pos
      * @param {number} y y pos
      * @param {number} r radius
@@ -166,13 +166,57 @@ class Write {
     }
 
     /**
-     * Sets the background color of components that have adjustable background colors
-     * @param {*} cmp component reference
+     * Draws a custom rectangle outline at a given position
+     * @param {number} x x pos
+     * @param {number} y y pos
+     * @param {number} width rectangle width
+     * @param {number} height rectangle height
+     * @param {string} color color -> use the color enum
+     */
+    drawRect(x, y, width, height, color) {
+        this.writeUart('draw '+x+','+y+','+(width+x)+','+(height+y)+','+color);
+    }
+    
+    /**
+     * Draws a custom rectangle with a solid color at a given position
+     * @param {number} x x pos
+     * @param {number} y y pos
+     * @param {number} width rectangle width
+     * @param {number} height rectangle height
+     * @param {string} color color -> use the color enum
+     */
+    drawRectFilled(x, y, width, height, color) {
+        this.writeUart('fill '+x+','+y+','+width+','+height+','+color);
+    }
+
+    /**
+     * Draws a line from the first to the second position
+     * @param {number} x1 x pos start 
+     * @param {number} y1 y pos start
+     * @param {number} x2 x pos end
+     * @param {number} y2 y pos end
+     * @param {string} color color -> use the color enum
+     */
+    drawLine(x1, y1, x2, y2, color) {
+        this.writeUart('line '+x1+','+y1+','+x2+','+y2+','+color);
+    }
+
+    /**
+     * Sets the background color of a component that has an adjustable background color
+     * @param {string} cmp component reference
+     * @param {string} color color -> use the color enum
+     */
+    setBackgroundColor(cmp, color) {
+        this.writeUart(cmp + '.bco=' + color);
+        this.writeUart('ref ' + cmp);
+    }
+
+    /**
+     * Clears the screen and fills it entirely with a specified color
      * @param {*} color color -> use the color enum
      */
-    setBackgroundColor (cmp, color) {
-        this.writeUart(cmp + ".bco=" + color);
-        this.writeUart("ref " + cmp);
+    clearScreen(color) {
+        this.writeUart('cls '+color);
     }
 
     /**
@@ -182,6 +226,13 @@ class Write {
     clickBtn(cmp) {
         this.writeUart('click '+cmp+',1');
         this.writeUart('click '+cmp+',0');
+    }
+
+    /**
+     * Resets the nextion display and forces an immediate reboot
+     */
+    reset() {
+        this.writeUart('rest');
     }
 
     /* actual sending functions */

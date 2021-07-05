@@ -92,6 +92,45 @@ Draws a filled circle
 nextion.write.drawCircleFilled(100, 100, 50, Nextion.color.red);
 ```
 
+### drawRect
+Draws a custom rectangle outline at a given position
+```javascript
+/**
+* @param {number} x pos
+* @param {number} y pos
+* @param {number} width
+* @param {number} height
+* @param {string} color -> use the color enum
+*/
+nextion.write.drawRect(100, 100, 50, 50, Nextion.color.red);
+```
+    
+### drawRectFilled
+Draws a custom rectangle with a solid color at a given position
+```javascript
+/**
+* @param {number} x pos
+* @param {number} y pos
+* @param {number} width
+* @param {number} height
+* @param {string} color -> use the color enum
+*/
+nextion.write.drawRectFilled(100, 100, 50, 50, Nextion.color.red);
+```
+    
+### drawLine
+Draws a line from the first to the second position
+```javascript
+/**
+* @param {number} x1 start pos
+* @param {number} y1 start pos
+* @param {number} x2 end pos
+* @param {number} y2 end pos
+* @param {string} color -> use the color enum
+*/
+nextion.write.drawLine(50, 50, 100, 100, Nextion.color.red);
+```
+
 ### setBackgroundColor
 Sets the background color of a component that has an adjustable background color
 ```javascript
@@ -102,6 +141,15 @@ Sets the background color of a component that has an adjustable background color
  nextion.write.setBackgroundColor('t0', Nextion.color.red);
 ```
 
+### clearScreen
+Clears the screen and fills it entirely with a specified color
+```javascript
+/**
+ * @param {*} color -> use the color enum
+ */
+ nextion.write.clearScreen(Nextion.color.white);
+```
+
 ### clickBtn
 Clicks the button with the corresponding component reference
 ```javascript
@@ -109,6 +157,15 @@ Clicks the button with the corresponding component reference
  * @param {string} button reference
  */
 nextion.write.clickBtn('b0');
+```
+
+### reset
+Resets the nextion display and forces an immediate reboot
+```javascript
+/**
+ * @param {string} button reference
+ */
+nextion.write.reset();
 ```
 
 ## Colors
